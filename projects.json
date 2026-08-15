@@ -1,0 +1,137 @@
+[
+  {
+    "id": "wolf_companion",
+    "title": "Wolf Companion",
+    "repo": "https://github.com/Wolf234-ux/wolf_companion",
+    "live": "https://wolf234-ux.github.io/wolf_companion/",
+    "short": "Private, on-device AI companion (PWA) that runs LLM inference in-browser via WebGPU.",
+    "tech": "WebLLM, WebGPU, PWA, Firebase Auth, Firestore",
+    "adlc": {
+      "aim": "Privacy-first conversational assistant with optional account sync and offline capability.",
+      "data": "Small calibration prompts and local conversation history stored per-user in Firestore; no outbound telemetry.",
+      "develop": "Integrated WebLLM runtime, implemented model caching and PWA manifest + service worker for offline shell.",
+      "deploy": "Deployed as GitHub Pages demo; first-load model download UX documented.",
+      "learn": "Monitor first-load times and WebGPU compatibility; next: progressive download and smaller model variants for low-end devices."
+    }
+  },
+  {
+    "id": "sentinelai-live",
+    "title": "SentinelAI",
+    "repo": "https://github.com/Wolf234-ux/sentinelai-live",
+    "live": "",
+    "short": "AI SOC alert triage: explains alerts, auto-resolves low-risk items, escalates unclear/risky ones with audit logging.",
+    "tech": "FastAPI, React, Supabase Auth, Gemini (LLM), SSE, SQLite audit log",
+    "adlc": {
+      "aim": "Reduce analyst workload by auto-resolving noise and providing explainable decisions with traceability.",
+      "data": "Realistic JSON alert feeds and simulated MCP connector; schema designed for audit logging and reproducibility.",
+      "develop": "Server-side LLM analysis with backend safety rules; SSE streaming to frontend; persistent audit log of prompt/response and model fingerprint.",
+      "deploy": "Local Docker Compose for dev; Render Blueprint recommended for production; planned Wazuh connector for live SIEM ingestion.",
+      "learn": "Tune decision thresholds based on analyst feedback; track false auto-resolutions and MTTR."
+    }
+  },
+  {
+    "id": "legal-llm-quantizer",
+    "title": "Legal LLM Quantizer",
+    "repo": "https://github.com/Wolf234-ux/legal-llm-quantizer",
+    "live": "",
+    "short": "On-prem Docker pipeline to 4-bit quantize large LLMs for compliance-sensitive legal deployments with audit logging.",
+    "tech": "GPTQ 4-bit, bitsandbytes fallback, Docker, Python",
+    "adlc": {
+      "aim": "Produce auditable, quantized model artifacts for law firms where data can't leave infrastructure.",
+      "data": "Calibration corpus built from firm legal documents (contracts, statutes) to preserve domain accuracy during quantization.",
+      "develop": "GPTQ calibration pass, config-driven quantization, SHA256 hashing for chain-of-custody, optional GGUF conversion for serving.",
+      "deploy": "Docker Compose with an air-gap option; outputs stored in models/quantized and logs/.",
+      "learn": "Run post-quant accuracy tests on legal evaluation sets; keep audit logs for reproducibility."
+    }
+  },
+  {
+    "id": "wolf-saas-dashboard",
+    "title": "Wolf SaaS Dashboard",
+    "repo": "https://github.com/Wolf234-ux/wolf-saas-dashboard",
+    "live": "",
+    "short": "Stylized full-stack streaming AI SaaS dashboard for ultra-low-latency token streaming demos.",
+    "tech": "React, FastAPI, Docker Compose, Ollama/local LLMs",
+    "adlc": {
+      "aim": "Deliver ultra-low-latency streaming chat for SaaS demos and prototypes.",
+      "data": "Integration with local inference engine inputs; configuration to connect to running model engines.",
+      "develop": "Streaming token delivery, system persona panels, cancel/abort controls, and history memory for context continuity.",
+      "deploy": "Docker Compose for local testing; guidance for LAN/mobile access and security token gating.",
+      "learn": "Instrument stream latency and resource usage; iterate UX for mobile responsiveness and cold-start behavior."
+    }
+  },
+  {
+    "id": "trifiber",
+    "title": "TriFiber",
+    "repo": "https://github.com/Wolf234-ux/trifiber",
+    "live": "",
+    "short": "Full-stack health SaaS (React + FastAPI) with Docker and Render Blueprint deployment instructions.",
+    "tech": "React, Vite, FastAPI, Docker, Render",
+    "adlc": {
+      "aim": "Prototype a consumer-facing evidence-led nutrition platform with a deployable stack.",
+      "data": "Product data, quiz inputs, batch lab records; used to generate personalized routines and product pages.",
+      "develop": "Multi-service Dockerfile, Vite frontend, and FastAPI backend with API docs and HTML preview routes.",
+      "deploy": "Render Blueprint for 1-click cloud deployment or Docker image for local testing.",
+      "learn": "Monitor deployments, health checks, and conversion funnel through demo analytics."
+    }
+  },
+  {
+    "id": "Pandemic_ETL-Project",
+    "title": "Pandemic ETL Project",
+    "repo": "https://github.com/Wolf234-ux/Pandemic_ETL-Project",
+    "live": "",
+    "short": "ETL demo extracting John Hopkins COVID-19 data, cleaning, and loading into a Postgres DB for analysis.",
+    "tech": "Python, Pandas, PostgreSQL, Jupyter",
+    "adlc": {
+      "aim": "Build a reproducible ETL pipeline to analyze COVID-19 cases for March 2020.",
+      "data": "CSV series from John Hopkins / Humdata; transformations included date normalization and daily increase calculation.",
+      "develop": "Pandas-based cleaning functions, melt/date transforms, and Postgres loading via SQLAlchemy/engine.",
+      "deploy": "Local Postgres for analytics; notebooks used for EDA and SQL queries.",
+      "learn": "Use results to drive visualizations; adapt pipeline for scheduled ingestion if needed."
+    }
+  },
+  {
+    "id": "BigDataProject",
+    "title": "BigDataProject",
+    "repo": "https://github.com/Wolf234-ux/BigDataProject",
+    "live": "",
+    "short": "General-purpose Big Data ETL starter showing extract → transform → load patterns and sample notebooks.",
+    "tech": "Python, SQL, CSV, optional Spark",
+    "adlc": {
+      "aim": "Demonstrate an end-to-end ETL pipeline for large datasets and provide examples for reproducible ingestion.",
+      "data": "Open datasets and CSV/JSON telemetry samples; config-driven input/output paths.",
+      "develop": "Modular scripts for extract, transform, and load; examples for scaling with Spark commented in code.",
+      "deploy": "Run as scheduled jobs (cron / Airflow) or containerized worker; unit tests with pytest included.",
+      "learn": "Add monitoring for data quality and column drift; integrate with orchestration tools for production runs."
+    }
+  },
+  {
+    "id": "sonilaw-visitor-demo-",
+    "title": "SoniLaw Visitor Demo",
+    "repo": "https://github.com/Wolf234-ux/sonilaw-visitor-demo-",
+    "live": "",
+    "short": "HTML/CSS/JS prototype of a visitor check-in flow with camera photo capture and returning-visitor autofill simulation.",
+    "tech": "HTML, CSS, JavaScript",
+    "adlc": {
+      "aim": "Prototype the interaction and UX of a visitor registration flow before backend integration.",
+      "data": "Simulated in-browser lookup and sample phone numbers for returning visitor flow.",
+      "develop": "No backend — client-side camera capture, reference number generation, and form interactions for UX validation.",
+      "deploy": "Hosted via GitHub Pages; used as a design artifact to wire to a Python/FastAPI + Supabase backend later.",
+      "learn": "Collect user feedback on flow and add real persistence & security when wiring to backend."
+    }
+  },
+  {
+    "id": "Simple-Linear-Regresion",
+    "title": "Simple Linear Regression",
+    "repo": "https://github.com/Wolf234-ux/Simple-Linear-Regresion",
+    "live": "",
+    "short": "Educational Jupyter notebook exploring simple linear regression for a salary-hike prediction exercise.",
+    "tech": "Jupyter Notebook, Python, Pandas, scikit-learn",
+    "adlc": {
+      "aim": "Build and evaluate a simple linear regression model for Salary_hike prediction using EDA and transformations.",
+      "data": "Small tabular dataset with salary and related features; used for correlation analysis and model selection.",
+      "develop": "EDA, visualization, correlation analysis, model building and testing in notebook form.",
+      "deploy": "Notebook artifacts for teaching/demo; no production serving.",
+      "learn": "Document findings and next steps for regularization, cross-validation, and feature engineering."
+    }
+  }
+]

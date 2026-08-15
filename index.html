@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saurav Dodiya — AI Product Engineer & AI Product Manager</title>
+  <meta name="description" content="Saurav (Wolf234-ux) — builds privacy-first AI products: on-device LLMs, on-prem quantization, and enterprise AI systems. Portfolio & case studies." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Saurav Dodiya (Wolf234-ux)</h1>
+      <nav class="links">
+        <a href="https://github.com/Wolf234-ux" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/saurav-dodiya" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:sauravdodiya4@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>AI Product Engineer & AI Product Manager</h2>
+      <p>I design, build, and ship privacy-first AI products — from on-device WebGPU companions to on-prem model pipelines and enterprise AI triage systems. I lead the end-to-end AI lifecycle: problem discovery, dataset design, model quantization/selection, safety rules, and production deployment.</p>
+      <p class="ctas"><a class="btn" href="#projects">View Projects</a> <a class="btn ghost" href="https://github.com/Wolf234-ux" target="_blank">See repos</a></p>
+    </section>
+
+    <section id="projects">
+      <h3>Projects & Case Studies</h3>
+      <div id="projects-grid" class="grid"></div>
+    </section>
+
+    <section id="about">
+      <h3>About my approach (ADLC)</h3>
+      <p>I present each project with Aim → Data → Develop → Deploy → Learn so viewers and hiring teams can quickly see the product problem, dataset choices, modeling decisions, deployment approach, and how the project was validated or iterated.</p>
+    </section>
+
+    <footer>
+      <p>Built by Saurav Dodiya — <a href="mailto:sauravdodiya4@gmail.com">sauravdodiya4@gmail.com</a> — <a href="https://www.linkedin.com/in/saurav-dodiya">LinkedIn</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Load projects metadata and render cards
+    async function load() {
+      const res = await fetch('projects.json');
+      const projects = await res.json();
+      const grid = document.getElementById('projects-grid');
+      projects.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="thumb"><img src="assets/${p.id}.svg" alt="${p.title} screenshot"></div>
+          <div class="card-body">
+            <h4>${p.title}</h4>
+            <p class="short">${p.short}</p>
+            <p class="tech">Tech: ${p.tech}</p>
+            <details>
+              <summary>ADLC summary</summary>
+              <strong>Aim:</strong> <span>${p.adlc.aim}</span><br/>
+              <strong>Data:</strong> <span>${p.adlc.data}</span><br/>
+              <strong>Develop:</strong> <span>${p.adlc.develop}</span><br/>
+              <strong>Deploy:</strong> <span>${p.adlc.deploy}</span><br/>
+              <strong>Learn / Next:</strong> <span>${p.adlc.learn}</span>
+            </details>
+            <p class="links"><a href="${p.repo}" target="_blank">Repo</a>${p.live? ' | <a href="'+p.live+'" target="_blank">Live</a>': ''}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    load().catch(e => console.error(e));
+  </script>
+</body>
+</html>
