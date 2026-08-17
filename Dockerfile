@@ -8,6 +8,7 @@ RUN apk add --no-cache gettext
 COPY index.html /usr/share/nginx/html/index.html
 COPY styles.css /usr/share/nginx/html/styles.css
 COPY projects.json /usr/share/nginx/html/projects.json
+COPY portfolio_thumbnail.jpg /usr/share/nginx/html/portfolio_thumbnail.jpg
 
 # Copy Nginx template and entrypoint script
 COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
