@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: saurav-ai-portfolio
+    name: saurav-dodiya-ai-product-manager-portfolio
     runtime: docker
     plan: free
     region: oregon
