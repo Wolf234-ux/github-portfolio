@@ -1,25 +1,57 @@
-# AI-focused portfolio — guide
+# Saurav Dodiya — AI Product Manager Portfolio
 
-This branch (feature/ai-portfolio) adds a single-page portfolio site focused on AI product case studies and ADLC-style project explanations.
+Ultra-luxury, editorial portfolio for **Saurav Dodiya — AI Product Manager** featuring interactive 3D WebGL core, 5-phase ADLC pipeline stepper, 4-layer AI Product Metrics scorecard, and privacy-first architectures.
 
-Preview locally:
-1. Clone this repo and checkout the branch:
-   git clone https://github.com/Wolf234-ux/github-portfolio.git
-   cd github-portfolio
-   git checkout feature/ai-portfolio
+---
 
-2. Serve locally (simple server):
-   python3 -m http.server 8000
-   Open http://localhost:8000
+## 🚀 Quick Start & Local Preview
 
-Files added:
-- index.html        — homepage, hero, and project grid
-- styles.css        — responsive styles
-- projects.json     — generated project metadata and ADLC summaries for each repo
-- assets/*.svg      — placeholder thumbnails (auto-generated)
+### Option 1: Simple Local Server
+```bash
+# Python Simple Server
+python -m http.server 8000
+# Open http://localhost:8000 in your browser
+```
 
-Next steps if you want changes:
-- Provide screenshots to replace placeholders (put them in assets/ and update filenames to match project ids).
-- Edit copy in projects.json to add metrics, links, or more detailed case study content.
-- I can open a PR comment with suggestions or iterate on changes before merging to main.
+### Option 2: Docker Container (Local Test)
+```bash
+# Build the Docker image
+docker build -t saurav-ai-portfolio .
 
+# Run the container
+docker run -p 8080:80 saurav-ai-portfolio
+# Open http://localhost:8080
+```
+
+---
+
+## ☁️ Auto-Deployment on Render
+
+This repository is pre-configured with a production-ready `Dockerfile` and `render.yaml` for zero-config automated deployment on [Render](https://render.com).
+
+### Method 1: 1-Click Render Blueprint (Recommended)
+1. Go to your [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** → **Blueprint**.
+3. Connect your GitHub repository: `https://github.com/Wolf234-ux/github-portfolio`.
+4. Select the branch (e.g. `main` or `feature/ai-portfolio`).
+5. Click **Apply**. Render will automatically build the Docker container and deploy your live URL.
+6. **Continuous Deployment:** Every `git push` to your branch will automatically trigger a new deployment.
+
+### Method 2: Manual Web Service on Render
+1. Go to **New +** → **Web Service**.
+2. Select `Wolf234-ux/github-portfolio`.
+3. Set **Runtime** to `Docker`.
+4. Set **Health Check Path** to `/healthz`.
+5. Click **Create Web Service**.
+
+---
+
+## 📂 Repository Structure
+
+- `index.html` — Main portfolio page (3D Three.js core, ADLC stepper, metrics matrix, case studies, experience)
+- `styles.css` — Nabil Issa-inspired luxury dark obsidian design system, capsule rolling buttons, and animations
+- `projects.json` — Quantified case studies, 4-layer metrics scorecard, and 5-phase ADLC data
+- `Dockerfile` — Production Nginx Alpine container optimized for Render `$PORT` dynamic binding
+- `nginx.conf.template` — Gzip compression, security headers, caching, and healthcheck
+- `entrypoint.sh` — Dynamic port substitution script
+- `render.yaml` — Render Blueprint specification
