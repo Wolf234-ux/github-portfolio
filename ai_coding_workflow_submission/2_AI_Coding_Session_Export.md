@@ -65,7 +65,7 @@ exec "$@"
 ```yaml
 services:
   - type: web
-    name: saurav-dodiya-ai-product-manager-portfolio
+    name: saurav-dodiya-ai-product-manager
     runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile

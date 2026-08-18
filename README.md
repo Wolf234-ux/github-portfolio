@@ -16,10 +16,10 @@ python -m http.server 8000
 ### Option 2: Docker Container (Local Test)
 ```bash
 # Build the Docker image
-docker build -t saurav-dodiya-ai-product-manager-portfolio .
+docker build -t saurav-dodiya-ai-product-manager .
 
 # Run the container
-docker run -p 8080:80 saurav-dodiya-ai-product-manager-portfolio
+docker run -p 8080:80 saurav-dodiya-ai-product-manager
 # Open http://localhost:8080
 ```
 
